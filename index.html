@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salesforce Interview Q&A - Sections 1 to 3</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --primary: #0176d3;
+      --primary-dark: #014486;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #d9e2ec;
+      --answer-bg: #f0f7ff;
+      --example-bg: #f8fbff;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; padding: 28px 36px; box-shadow: var(--shadow); }
+    header h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: 0.2px; }
+    header p { margin: 0; opacity: 0.95; font-size: 15px; }
+    .layout { display: grid; grid-template-columns: 310px 1fr; min-height: calc(100vh - 102px); }
+    aside { background: var(--panel); border-right: 1px solid var(--border); padding: 24px 18px; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+    aside h2 { font-size: 16px; margin: 0 0 14px; color: var(--primary-dark); }
+    .topic-link { display: block; text-decoration: none; color: var(--text); padding: 12px 14px; border-radius: 10px; margin-bottom: 10px; border: 1px solid var(--border); background: #fbfdff; font-weight: 600; }
+    .topic-link.active, .topic-link:hover { background: var(--answer-bg); color: var(--primary-dark); border-color: #9fcbed; }
+    main { padding: 30px 38px 60px; max-width: 1180px; }
+    .section-title { background: var(--panel); border: 1px solid var(--border); border-left: 6px solid var(--primary); border-radius: 14px; padding: 22px 24px; margin: 0 0 22px; box-shadow: var(--shadow); scroll-margin-top: 20px; }
+    .section-title:not(:first-child) { margin-top: 42px; }
+    .section-title h2 { margin: 0 0 8px; color: var(--primary-dark); font-size: 24px; }
+    .section-title p { margin: 0; color: var(--muted); }
+    .qa-card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 18px; box-shadow: var(--shadow); overflow: hidden; }
+    .question { padding: 18px 22px; background: #fbfdff; border-bottom: 1px solid var(--border); font-weight: 700; color: #111827; }
+    .question span { color: var(--primary); margin-right: 8px; }
+    .answer { padding: 18px 22px 20px; }
+    .answer p { margin: 0 0 10px; }
+    .answer strong { color: var(--primary-dark); }
+    .example { background: var(--example-bg); border-left: 4px solid #9fcbed; padding: 10px 12px; border-radius: 8px; }
+    code { background: #eef2f7; padding: 2px 5px; border-radius: 5px; font-family: Consolas, monospace; font-size: 0.92em; }
+    .footer-note { margin-top: 28px; padding: 16px 18px; color: var(--muted); background: #fff; border: 1px solid var(--border); border-radius: 12px; }
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+      main { padding: 22px 18px 44px; }
+      header { padding: 24px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Salesforce Interview Preparation</h1>
+    <p>Section-wise questions, answers, and examples for Senior Salesforce Developer preparation.</p>
+  </header>
+  <div class="layout">
+    <aside>
+      <h2>Sections</h2>
+      <a class="topic-link active" href="#topic1">Section 1: Hands-on Experience</a><a class="topic-link" href="#topic2">Section 2: Evaluating Classic Customizations for Lightning Transition</a><a class="topic-link" href="#topic3">Section 3: Migrating Custom Components to LWC</a><a class="topic-link" href="#topic4">Section 4: Scalable Solution Design &amp; OOB Features</a><a class="topic-link active" href="#topic7">Section 5: Lightning Flows &amp; Custom Development</a>
+    </aside>
+    <main>
+      
+      <section id="topic1" class="section-title">
+        <h2>Topic 1: Hands-on Experience</h2>
+        <p><strong>Salesforce Classic &amp; Lightning Web Components - 4+ Years</strong></p>
+      </section>
+      
+        <article class="qa-card">
+          <div class="question"><span>Q1.</span>Can you describe a complex Salesforce solution you built end-to-end as a senior developer?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I built an end-to-end claim and guarantee management solution involving custom objects, record types, approval processes, Apex services, batch jobs, integrations, and LWC screens. I handled requirement analysis, data model design, reusable UI components, integration error handling, deployment planning, and production support.</p>
+            <p class="example"><strong>Example:</strong> Example: A claim intake screen captured customer details, uploaded documents, triggered validations, sent data to an external system, and displayed real-time claim status to users.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q2.</span>What are the core architectural differences between Salesforce Classic and Lightning Experience?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Classic is mostly page-centric and server-rendered using standard pages, Visualforce, and controllers. Lightning Experience is component-based, responsive, event-driven, and uses Aura/LWC, Lightning App Builder, Lightning Data Service, and modern client-side rendering.</p>
+            <p class="example"><strong>Example:</strong> Example: In Classic, a custom edit screen may be a Visualforce page. In Lightning, the same experience can be split into reusable LWC components on a Lightning Record Page.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q3.</span>How do you manage and optimize governor limits in a high-transaction Salesforce org?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I bulkify Apex, avoid SOQL/DML inside loops, use maps and sets, write selective queries, move heavy work to asynchronous Apex, use batch/queueable jobs, and monitor logs and limit usage.</p>
+            <p class="example"><strong>Example:</strong> Example: Instead of querying contacts inside an account loop, I query all contacts once using AccountId IN :accountIds and process them with a Map&lt;Id, List&lt;Contact&gt;&gt;.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q4.</span>Explain the lifecycle hooks in Lightning Web Components (LWC) and their specific use cases.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Key hooks are constructor, connectedCallback, renderedCallback, disconnectedCallback, and errorCallback. connectedCallback is used for initialization, renderedCallback for DOM-dependent logic, disconnectedCallback for cleanup, and errorCallback for child component errors.</p>
+            <p class="example"><strong>Example:</strong> Example: Subscribe to Lightning Message Service in connectedCallback and unsubscribe in disconnectedCallback.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q5.</span>How do you ensure your Apex code and triggers are strictly bulkified for large data imports?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I process Trigger.new as a collection, collect IDs in sets, query related data once, use maps for lookups, perform DML outside loops, and test with 200+ records.</p>
+            <p class="example"><strong>Example:</strong> Example: For 200 opportunities, collect all AccountIds first, query all Accounts once, then update related data in a single DML statement.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q6.</span>What is the functional difference between @api, @track, and @wire decorators in LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> @api exposes public properties or methods, @track tracks deep changes for objects/arrays in older reactivity patterns, and @wire connects the component to Salesforce data or Apex reactively.</p>
+            <p class="example"><strong>Example:</strong> Example: Use @api recordId to receive the current record ID, @wire(getRecord) to load data, and a tracked object when mutating nested values.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q7.</span>Describe a scenario where you had to troubleshoot and optimize a poorly performing Visualforce page.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I optimized slow Visualforce pages by reducing view state, improving SOQL filters, adding pagination, moving heavy calculations to Apex services or async jobs, and removing unnecessary rerendering.</p>
+            <p class="example"><strong>Example:</strong> Example: A page loading thousands of line items was changed to server-side pagination with selective filters, reducing page load time significantly.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q8.</span>How does the Lightning Data Service (LDS) compare to Standard Controllers in Classic?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Standard Controllers support Visualforce CRUD and navigation. LDS supports Lightning components with record access, sharing/FLS enforcement, caching, and automatic UI synchronization without custom Apex.</p>
+            <p class="example"><strong>Example:</strong> Example: Use lightning-record-form instead of writing a custom Apex controller for a simple Account edit page.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q9.</span>What are the foundational differences in rendering between Aura components and LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Aura uses a Salesforce-specific component framework and rendering lifecycle. LWC is based on modern web standards such as custom elements, templates, ES modules, and Shadow DOM, making it lighter and faster.</p>
+            <p class="example"><strong>Example:</strong> Example: LWC templates use if:true/for:each, while Aura uses aura:if and aura:iteration.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q10.</span>How do you implement robust, user-friendly custom error handling within an LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I normalize Apex and wire errors, show user-friendly toast messages, log technical details, use try/catch for async logic, and avoid exposing sensitive stack traces to users.</p>
+            <p class="example"><strong>Example:</strong> Example: Apex throws AuraHandledException(&#x27;Unable to upload document. Please try again.&#x27;) while detailed errors go to a custom logging object.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q11.</span>Explain how the Lightning Message Service (LMS) works for cross-DOM communication.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> LMS enables unrelated LWC, Aura, and Visualforce components to communicate through a shared message channel. Components publish and subscribe to messages without needing parent-child relationships.</p>
+            <p class="example"><strong>Example:</strong> Example: A filter component publishes selected claim status, and an unrelated results component refreshes its list based on that message.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q12.</span>What strategies do you employ for debugging complex Apex logic in production environments?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use targeted debug logs, trace flags, custom logging, correlation IDs, exception handling, and reproducible test scenarios while avoiding excessive or sensitive logging.</p>
+            <p class="example"><strong>Example:</strong> Example: Add a transaction ID to logs across trigger, queueable, and integration callout execution.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q13.</span>How do you manage metadata deployments and CI/CD pipelines as a senior developer?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use Git, Salesforce DX, pull requests, validation deployments, automated tests, static analysis, environment-specific configuration, and rollback planning.</p>
+            <p class="example"><strong>Example:</strong> Example: Feature branch -&gt; sandbox validation -&gt; pull request review -&gt; UAT deployment -&gt; production deployment with rollback package.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q14.</span>What is the Shadow DOM, and how does it dictate your CSS strategies in LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Shadow DOM encapsulates component markup and styles. I use component-scoped CSS, SLDS utilities, styling hooks, and design tokens instead of relying on global overrides.</p>
+            <p class="example"><strong>Example:</strong> Example: A parent page CSS class cannot directly style an internal element of a child LWC unless styling hooks or public design patterns are used.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q15.</span>How do you handle asynchronous JavaScript operations (Promises, async/await) within LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use async/await or Promises for imperative Apex and API operations, manage loading states, handle errors in catch blocks, and avoid race conditions.</p>
+            <p class="example"><strong>Example:</strong> Example: Show a spinner before calling Apex, await the response, update data, then hide the spinner in finally.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q16.</span>Explain the concept of event bubbling and composed events in the LWC framework.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> bubbles:true lets events move upward through the DOM. composed:true allows events to cross the Shadow DOM boundary. I use them carefully to avoid uncontrolled event propagation.</p>
+            <p class="example"><strong>Example:</strong> Example: A child component dispatches a rowselect event with bubbles:true so the parent table wrapper can handle it.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q17.</span>Describe the underlying differences in page rendering engines between Classic and Lightning.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Classic relies heavily on server-side page rendering, while Lightning uses component-based client-side rendering with dynamic data updates and reusable UI composition.</p>
+            <p class="example"><strong>Example:</strong> Example: A Lightning page can update one component after a record change without refreshing the full page.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q18.</span>What is your approach to writing comprehensive unit tests for LWC using Jest?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I test rendering, user actions, emitted events, wire adapters, mocked Apex, conditional UI, loading states, and error scenarios.</p>
+            <p class="example"><strong>Example:</strong> Example: Mock getRecord wire data and assert that the component displays the account name and disables a button based on status.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q19.</span>Beyond simply achieving 75% coverage, what are your best practices for writing high-quality Apex test classes?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I write meaningful assertions, use test data factories, cover positive/negative/bulk scenarios, avoid SeeAllData, test security behavior, and verify async execution with Test.startTest and Test.stopTest.</p>
+            <p class="example"><strong>Example:</strong> Example: Test that a validation exception is thrown for invalid claim status and that 200 valid records process successfully.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q20.</span>How do you securely and efficiently handle REST API callouts directly from an LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I do not expose secrets in LWC. The LWC calls Apex, and Apex performs callouts using Named Credentials or External Credentials with centralized error handling.</p>
+            <p class="example"><strong>Example:</strong> Example: LWC calls uploadDocument(), Apex uses a Named Credential to call the document service.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q21.</span>What is the specific role of connectedCallback versus renderedCallback?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> connectedCallback runs when the component enters the DOM and is suited for initialization. renderedCallback runs after rendering and is suited for DOM-dependent logic but can run multiple times.</p>
+            <p class="example"><strong>Example:</strong> Example: Fetch initial data in connectedCallback; initialize a third-party chart once in renderedCallback using a hasRendered flag.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q22.</span>How do you manage session state or data caching across a Salesforce application?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use Platform Cache, LDS cache, cacheable Apex, custom metadata/settings for configuration, and avoid client-side storage for sensitive data.</p>
+            <p class="example"><strong>Example:</strong> Example: Cache an external access token in Platform Cache instead of requesting a new token for every integration call.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q23.</span>Explain the difference between using Cacheable=true and standard imperative Apex methods for LWC.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> cacheable=true is for read-only operations and supports client caching. Standard imperative Apex is used for DML, callouts requiring fresh data, or operations that should not be cached.</p>
+            <p class="example"><strong>Example:</strong> Example: Use cacheable=true for picklist display data, but not for creating a claim payment record.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q24.</span>How do you handle communication between independent LWC components that do not share a parent?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use Lightning Message Service for UI-level communication and Platform Events or Change Data Capture for backend/system-level communication.</p>
+            <p class="example"><strong>Example:</strong> Example: A dashboard filter LWC communicates with a chart LWC using LMS.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q25.</span>What specific security vulnerabilities do you actively prevent in custom code?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I prevent SOQL injection, XSS, CRUD/FLS bypass, insecure sharing, exposed secrets, unsafe dynamic Apex, and open redirects.</p>
+            <p class="example"><strong>Example:</strong> Example: Use bind variables in dynamic SOQL and Security.stripInaccessible before returning records to LWC.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q26.</span>How do you utilize Platform Events to build event-driven architectures in Salesforce?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I publish events from business transactions and allow Apex, Flow, or external subscribers to process them asynchronously and independently.</p>
+            <p class="example"><strong>Example:</strong> Example: Publish Claim_Status_Changed__e when a claim is approved so integration and notification processes can react separately.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q27.</span>Describe your daily workflow using Salesforce DX, the CLI, and Scratch Orgs.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I pull source from Git, create/update a scratch org or sandbox, push metadata, assign permissions, load test data, run tests, create pull requests, and promote changes through CI/CD.</p>
+            <p class="example"><strong>Example:</strong> Example: sf project deploy start validates changes before merging to the release branch.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q28.</span>How do you conditionally bypass standard validation rules dynamically within Apex?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use controlled mechanisms such as custom permissions, custom metadata, hierarchy settings, or dedicated bypass fields checked by validation rules. Access is restricted and audited.</p>
+            <p class="example"><strong>Example:</strong> Example: A data migration user gets a custom permission that bypasses one validation rule during controlled deployment only.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q29.</span>What is the maximum batch size in Batch Apex, and under what circumstances would you lower it?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> The maximum batch size is 2,000 records with Database.QueryLocator. I lower it for heavy CPU logic, callouts, complex DML, locking risk, or large related queries.</p>
+            <p class="example"><strong>Example:</strong> Example: Use batch size 50 for callout-heavy document synchronization to avoid timeout and callout limits.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q30.</span>How do you stay current with the latest Salesforce release notes, critical updates, and deprecations?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I review release notes, Critical Updates, Trailhead, known issues, preview sandboxes, developer blogs, and test upcoming changes before production rollout.</p>
+            <p class="example"><strong>Example:</strong> Example: Before each major release, validate custom LWC, Apex tests, integrations, and permission changes in a preview sandbox.</p>
+          </div>
+        </article>
+      <section id="topic2" class="section-title">
+        <h2>Topic 2: Evaluating Classic Customizations for Lightning Transition</h2>
+        <p><strong>Assessment, modernization strategy, and migration planning</strong></p>
+      </section>
+      
+        <article class="qa-card">
+          <div class="question"><span>Q1.</span>How do you technically assess which Visualforce pages need a total rebuild versus simply enabling Lightning Stylesheets?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I review page complexity, controller logic, JavaScript dependencies, user interaction model, mobile responsiveness, performance, and whether the page uses unsupported Classic behavior. If the page is mostly standard form/display UI, enabling Lightning Stylesheets may be enough. If it has complex client-side logic, multi-step UX, heavy view state, or poor performance, I recommend LWC rebuild.</p>
+            <p class="example"><strong>Example:</strong> A simple Account summary Visualforce page can use Lightning Stylesheets. A claim intake wizard with dynamic sections and custom JavaScript should be rebuilt in LWC.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q2.</span>What is your strategic approach for replacing custom JavaScript buttons from Classic?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I inventory all JavaScript buttons, identify their actions, security needs, and target objects, then replace them with Lightning Quick Actions, Flow actions, LWC buttons, or custom Apex-backed actions.</p>
+            <p class="example"><strong>Example:</strong> A JavaScript button that prepopulates a Case form can become a Quick Action with predefined field values or a screen Flow.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q3.</span>How do you interpret and act upon the results of the Lightning Experience Readiness Check report?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I categorize findings into blockers, high-impact changes, user productivity improvements, and cleanup items. Then I convert them into a migration backlog with priority, owner, testing scope, and rollout phase.</p>
+            <p class="example"><strong>Example:</strong> If the report flags JavaScript buttons, I create stories to replace them with Quick Actions or LWCs before enabling Lightning for that profile.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q4.</span>When evaluating a heavily customized Classic application, what factors justify a complete rewrite in LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> A complete rewrite is justified when the existing solution has high view state, unsupported JavaScript, difficult maintenance, poor mobile support, complex UI interactions, repeated user complaints, or business requirements that align better with component-based design.</p>
+            <p class="example"><strong>Example:</strong> A monolithic Visualforce claim portal with 3,000 lines of controller logic and multiple inline scripts is a strong candidate for LWC redesign.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q5.</span>How do you handle and transition URL hacks that were heavily relied upon in Classic?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I identify each URL hack, document its purpose, and replace it with supported Lightning navigation, Quick Actions with predefined values, screen Flows, or LWC navigation using NavigationMixin.</p>
+            <p class="example"><strong>Example:</strong> A URL hack that opens a new Opportunity with AccountId prefilled can be replaced with a Quick Action or NavigationMixin using defaultFieldValues.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q6.</span>What features exist in Classic that are not fully supported in Lightning, and what are your workarounds?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Some Classic behaviors such as JavaScript buttons, URL hacks, S-controls, certain sidebar components, and some old console behaviors are not directly supported. Workarounds include Quick Actions, Flow, LWC, Utility Bar, Lightning App Builder, and supported navigation APIs.</p>
+            <p class="example"><strong>Example:</strong> A homepage sidebar JavaScript component can be replaced by a Utility Bar LWC or Lightning App Page component.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q7.</span>How do you evaluate whether a custom Visualforce dashboard should be rebuilt using standard Lightning dashboards?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I compare the dashboard&#x27;s purpose, data source, filters, refresh needs, interactivity, security, and maintenance cost. If standard Lightning dashboards satisfy the requirement, I prefer standard features over custom code.</p>
+            <p class="example"><strong>Example:</strong> A Visualforce page showing sales KPIs can often be replaced with Lightning dashboards and report charts.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q8.</span>Describe how you would map custom links and buttons from Classic to Lightning equivalents like Quick Actions.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I create an inventory of buttons/links, classify each action as create/update/navigate/callout/launch tool, then map to Quick Actions, Global Actions, Flow, LWC, or URL-addressable components.</p>
+            <p class="example"><strong>Example:</strong> A &#x27;Create Follow-up Task&#x27; custom button maps well to an object-specific Quick Action.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q9.</span>How do you identify and quantify technical debt during a Lightning migration assessment?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I measure obsolete metadata, unsupported features, duplicate automation, code complexity, test quality, unused components, performance problems, and deployment risk. I quantify using counts, severity, business impact, and remediation effort.</p>
+            <p class="example"><strong>Example:</strong> 10 JavaScript buttons, 6 Visualforce pages with high view state, and 4 unused triggers can become a technical debt scorecard.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q10.</span>What is your architectural approach to migrating multi-page Visualforce wizards from Classic?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I break the wizard into stateful LWC steps, use a parent container for orchestration, Apex services for persistence, validation at each stage, and optional Flow if business users need configuration control.</p>
+            <p class="example"><strong>Example:</strong> A five-step warranty claim wizard can become a parent LWC with child components for customer details, product info, documents, review, and submit.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q11.</span>How do you comprehensively test remaining Classic customizations for UI and functional compatibility in Lightning?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I test Visualforce pages in Lightning container, page layout behavior, navigation, buttons, profiles, permissions, browser compatibility, mobile behavior, and regression scenarios.</p>
+            <p class="example"><strong>Example:</strong> Test a retained Visualforce invoice page from a Lightning Record Page, Console tab, and direct URL to confirm all navigation works.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q12.</span>How do you assess the impact of UI paradigm shifts on user workflows during a transition?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I conduct user journey mapping, compare clicks and screens before/after, identify training needs, run pilot testing, and collect feedback from high-volume users.</p>
+            <p class="example"><strong>Example:</strong> If users previously used one Classic page with all fields, Dynamic Forms may separate fields into tabs and reduce clutter but require training.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q13.</span>How do you handle custom related lists built in Visualforce when migrating to Lightning Record Pages?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I first check whether standard related lists, Dynamic Related Lists, or report charts can replace them. If not, I build a custom LWC datatable with pagination, sorting, row actions, and security enforcement.</p>
+            <p class="example"><strong>Example:</strong> A Visualforce related list showing filtered claim documents can become a Dynamic Related List or a custom LWC datatable.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q14.</span>What standard Lightning features do you lean on to replace overly complex Visualforce page layouts?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use Lightning Record Pages, Dynamic Forms, Dynamic Actions, Related List Quick Links, Path, Highlights Panel, Screen Flows, and standard Lightning components.</p>
+            <p class="example"><strong>Example:</strong> A Visualforce edit screen with conditional sections can often be replaced by Dynamic Forms with component visibility rules.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q15.</span>How do you evaluate the use of Action Links versus standard Lightning Quick Actions?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use Quick Actions for standard record-level actions inside Salesforce. Action Links are more suitable for integration-driven collaboration or feed-based actions. I prefer Quick Actions for maintainability unless the use case specifically needs Action Links.</p>
+            <p class="example"><strong>Example:</strong> A &#x27;Submit for Approval&#x27; action on a record is better as a Quick Action or Flow action, not an Action Link.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q16.</span>Describe a specific scenario where you would strongly recommend not converting a Visualforce page to LWC.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I would avoid converting when the page is stable, low usage, low maintenance, technically compatible with Lightning, and replacement cost is higher than business value.</p>
+            <p class="example"><strong>Example:</strong> A rarely used legal PDF preview Visualforce page that works inside Lightning may be retained until a broader document redesign.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q17.</span>How do you audit and migrate Classic email templates to Lightning email templates?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I inventory templates, check usage, merge fields, letterheads, folders, automation references, and convert active templates to Lightning Email Templates while testing merge output and permissions.</p>
+            <p class="example"><strong>Example:</strong> A Classic claim notification template used by workflow email alerts should be recreated and tested in Lightning Email Template Builder before switching automation.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q18.</span>What impact does transitioning to the Lightning UI have on the execution context of existing Apex triggers?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> The UI transition itself does not change Apex trigger execution context. Triggers still run based on DML operations. However, the source of DML may change from Visualforce controllers to Lightning components, Flow, Quick Actions, or LDS.</p>
+            <p class="example"><strong>Example:</strong> If an LWC uses updateRecord, the same before update and after update triggers execute as they did from Classic edit pages.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q19.</span>How do you transition custom pop-ups, alerts, or modal dialogues previously built in Classic?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I replace Classic JavaScript alerts or Visualforce pop-ups with LWC modals, LightningModal, quick action modals, toast messages, or screen Flow dialogs.</p>
+            <p class="example"><strong>Example:</strong> A JavaScript confirm dialog before closing a claim can become an LWC modal with Confirm and Cancel actions.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q20.</span>How do you use the Salesforce Optimizer tool to clean up an org before a Lightning transition?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use Optimizer findings to identify unused fields, inactive automation, excessive profiles/permissions, storage issues, and configuration risks. These are turned into cleanup tasks before migration.</p>
+            <p class="example"><strong>Example:</strong> If Optimizer shows hundreds of unused fields on Case, I review with business owners before moving those fields into Dynamic Forms.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q21.</span>How do you deal with legacy S-Controls if you encounter them during an org assessment?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I treat S-Controls as high-risk legacy items. I document their behavior and replace them with LWC, Visualforce, Flow, or external integrations depending on function.</p>
+            <p class="example"><strong>Example:</strong> An S-Control launching an external quoting page can be replaced with an LWC using NavigationMixin or a named credential-backed integration.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q22.</span>What is your methodology for translating monolithic standard page layouts into modular Lightning Record Pages?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I group fields by business process, role, and lifecycle stage, then create modular sections using Dynamic Forms, tabs, accordions, related lists, and visibility rules.</p>
+            <p class="example"><strong>Example:</strong> A 200-field Case layout can become tabs for Intake, Investigation, Settlement, Documents, and Audit.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q23.</span>How do you evaluate the use of Dynamic Forms to replace complex, code-heavy Visualforce data entry screens?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I check whether conditional visibility, field sections, required fields, record type behavior, and user role-based variations can be handled declaratively. If yes, Dynamic Forms reduce code and maintenance.</p>
+            <p class="example"><strong>Example:</strong> A Visualforce page showing fields based on claim type can often become Dynamic Forms with component visibility filters.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q24.</span>How do you assess the migration of legacy document attachments and notes to Salesforce Files and Enhanced Notes?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I assess attachment volume, parent records, integrations, permissions, storage, migration tools, file ownership, and business retention rules before moving Attachments/Notes to Files/Enhanced Notes.</p>
+            <p class="example"><strong>Example:</strong> Legacy claim photos stored as Attachments can be migrated to ContentVersion and linked to claims using ContentDocumentLink.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q25.</span>How do you evaluate legacy Flow visual workflows that were previously embedded directly into Visualforce pages?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I review the Flow type, input/output variables, screen design, embedding method, and dependencies. Then I decide whether to place it directly on a Lightning page, launch from Quick Action, or rebuild as LWC/Flow hybrid.</p>
+            <p class="example"><strong>Example:</strong> A Visualforce-embedded RFI screen Flow can become a Lightning Record Page flow component receiving recordId.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q26.</span>What are the specific performance implications and risks of running VF pages inside the Lightning iframe context?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Visualforce in Lightning runs inside a container/iframe-like context, which can add load overhead, navigation differences, styling inconsistencies, third-party script issues, and communication limitations.</p>
+            <p class="example"><strong>Example:</strong> A Visualforce page that was fast in Classic may feel slower in Lightning because both Lightning shell and VF resources load.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q27.</span>How do you audit custom tabs and Web Tabs, mapping them effectively into the Lightning App Builder?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I inventory tabs, usage, target URLs/components, profile visibility, app assignments, and map them to Lightning App pages, component tabs, navigation items, or Utility Bar items.</p>
+            <p class="example"><strong>Example:</strong> A Web Tab for an external claims portal can become a Lightning navigation item or an LWC wrapper depending on security requirements.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q28.</span>What tools or scripts do you use to create a full metadata inventory before initiating a Lightning migration?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use Salesforce CLI, Metadata API, Tooling API queries, package.xml retrievals, Setup audit, Optimizer, Readiness Check, and custom scripts to list Visualforce pages, Aura components, buttons, tabs, layouts, flows, and Apex.</p>
+            <p class="example"><strong>Example:</strong> A CLI metadata retrieve can export all CustomButton metadata to identify JavaScript buttons.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q29.</span>How do you evaluate which departments, roles, or profiles are best suited for the first phase of a Lightning rollout?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I choose pilot groups with manageable complexity, motivated users, high feedback quality, limited blockers, and clear business value. I avoid starting with the most complex or mission-critical team unless necessary.</p>
+            <p class="example"><strong>Example:</strong> Start with internal support users before rolling out to external partner or high-volume service teams.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q30.</span>How do you ensure that complex data security and field-level security are maintained accurately during the UI overhaul?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I validate profiles, permission sets, sharing rules, role hierarchy, restriction rules, FLS, Apex sharing mode, stripInaccessible usage, and component visibility. I test with real user personas.</p>
+            <p class="example"><strong>Example:</strong> A field hidden by FLS must not be displayed by a custom LWC even if the Apex query retrieves it.</p>
+          </div>
+        </article>
+      <section id="topic3" class="section-title">
+        <h2>Topic 3: Migrating Custom Components to LWC</h2>
+        <p><strong>Aura, Visualforce, and legacy UI modernization into LWC</strong></p>
+      </section>
+      
+        <article class="qa-card">
+          <div class="question"><span>Q1.</span>Walk me through your step-by-step technical process for converting an Aura component to an LWC.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I analyze the Aura component structure, attributes, events, Apex dependencies, styling, and usage locations. Then I create an LWC equivalent, migrate attributes to JS properties, convert markup, replace events, test behavior, and deploy incrementally.</p>
+            <p class="example"><strong>Example:</strong> Aura attribute v.recordId becomes @api recordId in LWC, and aura:iteration becomes template for:each.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q2.</span>How do you translate Aura&#x27;s init handlers (doInit) into the appropriate LWC lifecycle hooks?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Aura doInit usually maps to connectedCallback in LWC when logic must run when the component loads. If logic depends on rendered DOM, I move it to renderedCallback with a guard flag.</p>
+            <p class="example"><strong>Example:</strong> An Apex data load from doInit should move to connectedCallback or @wire.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q3.</span>What is the exact LWC equivalent of Aura&#x27;s force:recordData, and how does its implementation differ?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> The LWC equivalent is Lightning Data Service through lightning-record-form, lightning-record-view-form, lightning-record-edit-form, or wire adapters such as getRecord and updateRecord.</p>
+            <p class="example"><strong>Example:</strong> Instead of force:recordData targetFields, use @wire(getRecord, { recordId: &#x27;$recordId&#x27;, fields }) in LWC.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q4.</span>How do you architect a system where Aura components and newly migrated LWCs must coexist and communicate?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use Aura wrappers for unsupported containers, Lightning Message Service for communication, public @api properties for parent-to-child data, and custom events for child-to-parent communication.</p>
+            <p class="example"><strong>Example:</strong> An Aura parent can contain an LWC and pass recordId to it, while both communicate with another component via LMS.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q5.</span>Can an LWC contain an Aura component natively? Explain the component hierarchy rules.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> An Aura component can contain an LWC, but an LWC cannot directly contain an Aura component. This is an important hierarchy rule during phased migration.</p>
+            <p class="example"><strong>Example:</strong> If a legacy Aura widget must remain, keep Aura as the wrapper and place new LWC components inside it.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q6.</span>How do you refactor monolithic Visualforce Apex controllers to act as efficient data providers for LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I separate business logic into service classes, expose focused @AuraEnabled methods, return lightweight DTO/wrapper objects, enforce security, and avoid view-state-driven logic.</p>
+            <p class="example"><strong>Example:</strong> A 1,000-line controller can be split into ClaimService, ClaimSelector, ClaimDTO, and ClaimController methods for LWC.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q7.</span>Explain the process and syntax for wrapping an LWC inside an Aura component for backward compatibility.</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Create an Aura component that implements required interfaces and includes the LWC tag using c:componentName. Pass attributes from Aura to LWC as public @api properties.</p>
+            <p class="example"><strong>Example:</strong> An Aura wrapper implementing force:hasRecordId can pass {!v.recordId} to &lt;c:claimSummary record-id=&#x27;{!v.recordId}&#x27;/&gt;.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q8.</span>How do you map and migrate Aura application events to LWC communication patterns?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I replace Aura application events with Lightning Message Service for unrelated components, custom DOM events for parent-child communication, or platform events for backend communication.</p>
+            <p class="example"><strong>Example:</strong> An app-wide selectedAccount event can become an LMS message channel named SelectedAccount__c.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q9.</span>What is your process for replacing a custom Visualforce data entry form with lightning-record-edit-form in LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I map fields, validation rules, required behavior, record type logic, save/cancel flow, error handling, and success messages. Then I use lightning-record-edit-form with lightning-input-field where standard behavior is enough.</p>
+            <p class="example"><strong>Example:</strong> A simple Contact edit Visualforce page can become lightning-record-edit-form with onsuccess toast and navigation.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q10.</span>How do you resolve UI and CSS styling conflicts when migrating a Visualforce component into the LWC Shadow DOM?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I remove global CSS assumptions, scope styles to the component, use SLDS classes, styling hooks, and CSS custom properties. I avoid depending on parent DOM selectors.</p>
+            <p class="example"><strong>Example:</strong> A legacy .btn CSS rule should become a scoped class inside component.css or use slds-button.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q11.</span>How do you migrate and load third-party JavaScript libraries like Chart.js from Visualforce into an LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I upload the library as a static resource, load it using loadScript/loadStyle from lightning/platformResourceLoader, initialize it in renderedCallback once, and verify Locker/LWS compatibility.</p>
+            <p class="example"><strong>Example:</strong> Chart.js can be loaded once in renderedCallback using a hasRendered flag before creating the chart.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q12.</span>How do you evaluate when to use the standard lightning-record-picker versus building a custom LWC lookup?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use lightning-record-picker when standard object search, filters, and display behavior meet requirements. I build a custom lookup only for complex multi-select, custom search logic, external data, or advanced UI needs.</p>
+            <p class="example"><strong>Example:</strong> A simple Account lookup should use lightning-record-picker; a grouped product lookup with external pricing may need custom LWC.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q13.</span>How do you migrate an Aura component that relies on force:navigateToURL or force:navigateToSObject?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I replace Aura navigation events with the LWC NavigationMixin and standard page references for record pages, object pages, web pages, named pages, or components.</p>
+            <p class="example"><strong>Example:</strong> force:navigateToSObject becomes NavigationMixin.Navigate with type: &#x27;standard__recordPage&#x27;.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q14.</span>What is the exact LWC replacement for invoking child methods previously handled by aura:method?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> In LWC, expose child methods using @api and call them from the parent using this.template.querySelector(&#x27;c-child&#x27;).methodName().</p>
+            <p class="example"><strong>Example:</strong> A parent LWC can call this.template.querySelector(&#x27;c-claim-form&#x27;).validateForm().</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q15.</span>How do you replace Aura&#x27;s debugging mechanisms with modern browser debugging for LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use browser DevTools, console logging, breakpoints, source maps, Jest tests, Lightning Inspector where useful, network tab, and Salesforce debug logs for Apex.</p>
+            <p class="example"><strong>Example:</strong> Debug an imperative Apex call by checking the browser Network tab and Apex debug logs together.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q16.</span>How do you translate conditional rendering logic (aura:if) into LWC template syntax?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Aura aura:if becomes LWC template directives like lwc:if, lwc:elseif, lwc:else or older if:true/if:false patterns.</p>
+            <p class="example"><strong>Example:</strong> &lt;template lwc:if={showDetails}&gt; displays a section when showDetails is true.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q17.</span>How do you translate data iteration arrays (aura:iteration) into LWC template syntax?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Aura aura:iteration becomes template for:each with for:item and a required key attribute for efficient rendering.</p>
+            <p class="example"><strong>Example:</strong> &lt;template for:each={claims} for:item=&#x27;claim&#x27;&gt;&lt;div key={claim.Id}&gt;{claim.Name}&lt;/div&gt;&lt;/template&gt;.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q18.</span>What are the most common technical pitfalls developers face when migrating complex stateful components to LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Common pitfalls include assuming two-way binding, mishandling async state, overusing renderedCallback, mutating arrays without reassignment, ignoring Shadow DOM, and not redesigning component boundaries.</p>
+            <p class="example"><strong>Example:</strong> If a child updates data, it should dispatch an event and let the parent update state rather than directly modifying parent data.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q19.</span>How do you address the differences in client-side data caching behavior between Aura and LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use LDS, @wire cache, refreshApex, notifyRecordUpdateAvailable, and clear boundaries between cached read operations and imperative updates.</p>
+            <p class="example"><strong>Example:</strong> After updating a record imperatively, call refreshApex or notifyRecordUpdateAvailable so wired data refreshes.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q20.</span>How do you migrate a component that relies heavily on Aura&#x27;s two-way data binding, given LWC&#x27;s one-way data flow?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I redesign data flow so parent owns state, passes data down through properties, and children notify changes through custom events. The parent updates state and rerenders children.</p>
+            <p class="example"><strong>Example:</strong> A child input dispatches valuechange with the new value; the parent updates the form model.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q21.</span>What is your strategy for breaking down global CSS used in Aura into scoped CSS for LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I identify reusable design patterns, convert global selectors into component-scoped classes, use SLDS utilities, extract shared tokens, and avoid styling internal DOM of base components.</p>
+            <p class="example"><strong>Example:</strong> A global .warning-panel style becomes a local .warningPanel class inside the relevant LWC CSS file.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q22.</span>How do you replace Aura&#x27;s force:showToast event with the LWC ShowToastEvent module?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I import ShowToastEvent from lightning/platformShowToastEvent and dispatch it from the LWC with title, message, variant, and mode.</p>
+            <p class="example"><strong>Example:</strong> After saving a claim, dispatch a success toast saying &#x27;Claim updated successfully&#x27;.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q23.</span>If you must retain a Visualforce page, how do you pass data securely from it to an embedded LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I avoid exposing sensitive values in URLs. I use signed/validated parameters, server-side Apex access checks, Lightning Out only where appropriate, and retrieve sensitive data from Apex using the current user&#x27;s permissions.</p>
+            <p class="example"><strong>Example:</strong> Pass only a recordId to the embedded component and let Apex verify access before returning claim details.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q24.</span>From a framework perspective, what are the inherent security enhancements gained by migrating from Aura to LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> LWC aligns with modern web standards, promotes Shadow DOM encapsulation, stricter component boundaries, safer DOM access patterns, and improved compatibility with Lightning Web Security.</p>
+            <p class="example"><strong>Example:</strong> Direct DOM manipulation patterns from legacy Aura are reduced by LWC template binding and scoped DOM access.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q25.</span>How do you systematically convert Aura bound expressions ({!v.attribute}) to LWC JavaScript getters and properties?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I map Aura attributes to JS fields or @api properties, convert computed expressions into getters, and move logic out of templates when necessary.</p>
+            <p class="example"><strong>Example:</strong> {!v.firstName + &#x27; &#x27; + v.lastName} becomes get fullName() { return `${this.firstName} ${this.lastName}`; }.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q26.</span>What specific challenges have you faced with Shadow DOM encapsulation when migrating legacy UI code, and how did you fix them?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> Legacy CSS often depends on global selectors or reaching into child markup. I fix this by using SLDS, styling hooks, CSS variables, and component-scoped styles.</p>
+            <p class="example"><strong>Example:</strong> A global style targeting input elements did not affect lightning-input, so I used SLDS classes and supported styling hooks.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q27.</span>How do you handle routing and navigation states in LWC compared to the lightning:navigation service in Aura?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I use NavigationMixin with page references and CurrentPageReference wire adapter to read state parameters. This replaces Aura navigation services and events.</p>
+            <p class="example"><strong>Example:</strong> Read c__claimId from CurrentPageReference and navigate to a record page using NavigationMixin.Navigate.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q28.</span>How do you refactor Visualforce functionality that relied on standard window.location redirects?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I replace direct window.location logic with NavigationMixin, Quick Actions, Flow navigation, or server-returned navigation decisions handled client-side.</p>
+            <p class="example"><strong>Example:</strong> Instead of window.location=&#x27;/&#x27;+recordId, use NavigationMixin.Navigate to standard__recordPage.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q29.</span>Post-migration, what steps do you take to optimize the payload and rendering performance of the new LWC?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> I reduce Apex payloads, lazy-load data, split large components, use pagination, avoid unnecessary rerenders, cache read-only data, optimize SOQL, and use base Lightning components.</p>
+            <p class="example"><strong>Example:</strong> Load claim documents only when the Documents tab is opened instead of during initial page load.</p>
+          </div>
+        </article>
+        <article class="qa-card">
+          <div class="question"><span>Q30.</span>Describe a complex component migration project that failed testing. What was the root cause, and how did you resolve it?</div>
+          <div class="answer">
+            <p><strong>Answer:</strong> A migration can fail when hidden Aura assumptions are missed, such as two-way binding, timing of events, or global CSS. I resolve it by tracing data flow, adding tests, redesigning state ownership, and fixing communication patterns.</p>
+            <p class="example"><strong>Example:</strong> A migrated pricing component showed stale totals because the child updated local state only. We fixed it by dispatching events to the parent and recalculating totals centrally.</p>
+          </div>
+        </article>
+        <section id="topic6" class="section-title">
+        <h2>Topic 6: Scalable Solution Design &amp; OOB Features</h2>
+        <p><strong>Architecture decisions, Salesforce scalability, OOB-first design, and enterprise patterns</strong></p>
+      </section>
+      
+    <article class="qa-card">
+      <div class="question"><span>Q1.</span>What is your exact framework or decision matrix for choosing a declarative (OOB) solution over a programmatic one?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I follow a configuration-first decision matrix: check whether the requirement can be met using standard objects, fields, validation rules, flows, approval processes, dynamic forms, reports, or standard automation. I choose OOB when it satisfies the business need with acceptable performance, security, maintainability, and upgrade compatibility. I move to custom code only when the requirement needs complex transaction control, advanced error handling, high-volume processing, reusable services, custom UI behavior, or integration logic that declarative tools cannot safely support.</p>
+        <p class="example"><strong>Example:</strong> If users need conditional field visibility on a record page, I use Dynamic Forms instead of creating a custom LWC. If the logic must process millions of records nightly with complex retry handling, I choose Batch Apex or Queueable Apex.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q2.</span>Explain the Salesforce Order of Execution in detail. Why is mastering it critical for building scalable orgs?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> The Order of Execution defines the exact sequence Salesforce follows when a record is saved: system validation, before-save flows, before triggers, custom validation rules, duplicate rules, save to database, after triggers, assignment rules, auto-response rules, workflow rules, processes/flows, escalation rules, roll-up summary recalculations, sharing recalculations, and commit/post-commit actions. Mastering it prevents recursion, duplicate automation, unexpected field overwrites, and performance issues in complex orgs.</p>
+        <p class="example"><strong>Example:</strong> If a before-save flow updates a field and an Apex before trigger also updates the same field, knowing the execution order helps decide where the logic should live and prevents conflicting behavior.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q3.</span>How do you architect a relational data model that is guaranteed to scale gracefully for Large Data Volumes (LDV)?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> For LDV, I design selective relationships, avoid unnecessary parent-child depth, minimize ownership and lookup skew, use indexed filters, archive old data, partition data where possible, reduce large sharing recalculations, and design queries around selective criteria. I also avoid reporting or automation patterns that scan huge datasets repeatedly.</p>
+        <p class="example"><strong>Example:</strong> For a claims object with millions of records, I add indexed fields such as Status, Region, External Id, and CreatedDate filters so list views and integrations never query the entire object.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q4.</span>What are Skinny Tables, under what strict conditions are they used, and how do you request them?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> Skinny Tables are Salesforce-created custom database tables that store frequently accessed fields from a standard or custom object to improve read performance. They are used only when query/report performance issues cannot be solved through indexing, selective queries, archiving, or better data modeling. They must be requested through Salesforce Support and are evaluated by Salesforce.</p>
+        <p class="example"><strong>Example:</strong> If a high-volume Case report repeatedly joins many fields and remains slow after query optimization, Salesforce Support may evaluate whether a Skinny Table is appropriate.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q5.</span>How do you leverage Custom Metadata Types to replace hardcoded variables and build scalable, data-driven applications?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> Custom Metadata Types store configuration that can be deployed between environments and referenced by Apex, Flow, and validation logic. I use them for feature toggles, integration endpoints, mapping rules, retry settings, business thresholds, and scheduler configuration instead of hardcoding values.</p>
+        <p class="example"><strong>Example:</strong> Instead of hardcoding an approval threshold of 50000 in Apex, I store threshold values by country or product type in Custom Metadata and read them dynamically.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q6.</span>Explain how you design an external API integration architecture that prevents hitting concurrent API request limits.</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I design integrations using asynchronous patterns, queueing, throttling, retry policies, circuit breakers, Platform Events, middleware, and cached tokens. I avoid long-running synchronous callouts from UI transactions and batch calls where possible. I also set timeouts carefully and monitor API usage.</p>
+        <p class="example"><strong>Example:</strong> For document uploads, the LWC starts the request, Apex enqueues a Queueable job, and the job sends the payload to external storage asynchronously with retry logic.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q7.</span>How do you incorporate Salesforce Shield (Platform Encryption, Event Monitoring) into a scalable enterprise security design?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I use Platform Encryption for sensitive fields after reviewing search, filter, formula, and integration impacts. I use Event Monitoring for audit trails, anomaly detection, login analysis, report export tracking, and API usage monitoring. Shield is included early in design so encryption and monitoring do not become afterthoughts.</p>
+        <p class="example"><strong>Example:</strong> For personally identifiable information on claims, encrypt sensitive fields and use Event Monitoring to track bulk exports or suspicious login behavior.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q8.</span>From a database performance perspective, what are the deep architectural differences between Lookup and Master-Detail relationships?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> Master-Detail relationships create tight ownership, security, cascade delete, and roll-up behavior. Lookup relationships are looser and allow independent ownership and optional relationships. From a performance perspective, Master-Detail can simplify security but may increase roll-up and locking impacts; Lookup may create lookup skew if too many child records point to one parent.</p>
+        <p class="example"><strong>Example:</strong> Use Master-Detail for invoice lines tightly owned by an invoice. Use Lookup when claim documents must have independent ownership or lifecycle.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q9.</span>When designing for performance, how do you evaluate standard sharing rules versus programmatic Apex managed sharing?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I use standard sharing rules when sharing logic is stable, role/group based, and declarative. I use Apex managed sharing when access needs complex business rules, external calculations, or dynamic record-level logic. For performance, I minimize frequent share recalculations and avoid creating excessive share rows.</p>
+        <p class="example"><strong>Example:</strong> If all users in a region need access to regional claims, use sharing rules. If claim access depends on changing claim assignment history, Apex managed sharing may be needed.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q10.</span>Under what data volume or integration scenarios would you mandate the use of External Objects (Salesforce Connect) over custom objects?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I use External Objects when data must remain in an external system of record, when copying data into Salesforce would create storage/performance issues, when near-real-time access is required, or when compliance prevents full replication. I avoid External Objects for transactional use cases requiring heavy automation or complex reporting inside Salesforce.</p>
+        <p class="example"><strong>Example:</strong> Product inventory with millions of frequently updated records can remain in an external ERP and be exposed through Salesforce Connect instead of copied into custom objects.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q11.</span>How do you utilize Dynamic Forms and Dynamic Actions to drastically reduce the need for custom LWC page overrides?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> Dynamic Forms and Dynamic Actions allow field sections and actions to appear based on record data, user profile, permissions, device, and business context. I use them to replace custom Visualforce or LWC pages that were built only for conditional page layout behavior.</p>
+        <p class="example"><strong>Example:</strong> If commercial claims need settlement fields and residential claims need inspection fields, Dynamic Forms can show the correct sections based on record type.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q12.</span>What design patterns do you employ to avoid Spaghetti Code in orgs with heavily overlapping triggers and flows?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I use one-trigger-per-object, trigger handler classes, service layers, selector layers, domain patterns, custom metadata feature switches, flow entry criteria, before-save flows for simple updates, and clear ownership of automation. I also document automation order and avoid duplicate logic across Flow and Apex.</p>
+        <p class="example"><strong>Example:</strong> For Case automation, keep simple field updates in before-save Flow and complex integrations in Apex service classes invoked from a controlled trigger handler.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q13.</span>How do you conceptually map out Governor Limits during the architecture phase before writing a single line of code?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I estimate transaction volume, record counts, SOQL/DML needs, callouts, CPU complexity, heap usage, sharing implications, and async boundaries. I identify worst-case scenarios and design bulk-safe processing before implementation starts.</p>
+        <p class="example"><strong>Example:</strong> If a data load may update 200 claims and each claim has 50 child records, I design one aggregate child query instead of per-record queries.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q14.</span>What are the specific scalability and locking implications of heavily using Roll-Up Summary fields on core objects?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> Roll-Up Summary fields cause parent recalculations whenever child records change. Heavy use on high-volume child objects can increase save time, cause parent record locking, and create contention during bulk loads or integrations. I limit rollups on hot parent records and consider async summary patterns when needed.</p>
+        <p class="example"><strong>Example:</strong> If thousands of claim line items update the same parent claim during a load, multiple rollups can create parent lock errors.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q15.</span>How do you utilize Salesforce Platform Cache (Session vs. Org cache) to improve custom application performance?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> Session Cache stores user-session-specific data, while Org Cache stores shared data across users. I use Platform Cache for frequently accessed, expensive-to-query, non-sensitive, and refreshable data. I include fallback logic because cache entries can expire.</p>
+        <p class="example"><strong>Example:</strong> Store user-specific wizard progress in Session Cache and store common product configuration mappings in Org Cache.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q16.</span>Describe a project where you completely deprecated a custom code solution in favor of a newly released OOB standard feature.</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> A good example is replacing a custom Visualforce conditional page layout with Dynamic Forms and Dynamic Actions. The custom code was originally required to show fields conditionally, but the standard feature later provided the same capability with less maintenance and better upgrade compatibility.</p>
+        <p class="example"><strong>Example:</strong> A custom claim edit Visualforce page can be retired after moving conditional sections to Dynamic Forms on the Lightning Record Page.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q17.</span>How do you identify, design around, and resolve data skew (both Ownership Skew and Lookup Skew)?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> Ownership skew happens when one user owns too many records. Lookup skew happens when many child records reference the same parent. I identify skew through data analysis, reports, SOQL aggregates, and locking errors. I resolve it through data redistribution, queue ownership, filtered sharing, indexed lookups, and redesigning relationships.</p>
+        <p class="example"><strong>Example:</strong> If millions of records are owned by an integration user, distribute ownership to queues or regional owners to reduce sharing recalculation pressure.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q18.</span>For highly complex business logic that pushes the limits of Flows, how do you decide when to transition to Apex?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I move from Flow to Apex when logic needs complex collection processing, reusable services, advanced exception handling, transaction control, testable algorithms, callout orchestration, or performance optimization beyond Flow capability. Flow remains preferred for simple, admin-maintainable automation.</p>
+        <p class="example"><strong>Example:</strong> A simple status update belongs in Flow; a complex claim pricing engine with multiple related objects and exception paths belongs in Apex.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q19.</span>How do you design and implement a scalable, centralized error-logging framework using standard objects or platform events?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I create a reusable logging service that captures source, severity, transaction ID, user, record ID, message, stack trace, payload reference, and retry status. For synchronous logging, I use a custom Log object carefully. For high-volume asynchronous logging, I publish Platform Events and process logs separately.</p>
+        <p class="example"><strong>Example:</strong> An integration failure publishes Integration_Error__e, and a subscriber stores the error details without blocking the original transaction.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q20.</span>Explain the performance differences and specific use cases for Custom Settings versus Custom Metadata Types.</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> Custom Settings are runtime data/configuration and can be hierarchy-based for org/profile/user-level overrides. Custom Metadata Types are deployable configuration records and are preferred for application behavior that should move through environments. CMDT is better for packaged and version-controlled configuration.</p>
+        <p class="example"><strong>Example:</strong> Use Hierarchy Custom Settings for user-specific bypass flags; use Custom Metadata for integration endpoint mapping by environment.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q21.</span>How do you design a Role Hierarchy that supports business visibility needs without severely impacting sharing recalculation performance?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I keep the role hierarchy as simple and stable as possible, avoid excessive role depth, minimize frequent owner changes, align roles to true visibility needs, and use public groups or sharing rules where appropriate. I avoid using role hierarchy as a mirror of the complete HR organization if that creates unnecessary complexity.</p>
+        <p class="example"><strong>Example:</strong> Instead of creating a role for every small team, group similar visibility needs into regional roles and use permission sets for functional access.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q22.</span>What are the strict limits of declarative Roll-up summaries, and how do you architect a scalable solution to bypass them, such as DLRS?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> Standard roll-up summaries only work on Master-Detail relationships and have limits on count and supported calculations. For Lookup relationships or complex filters, I use DLRS, Flow, Apex aggregate queries, or asynchronous summary objects depending on volume and performance needs.</p>
+        <p class="example"><strong>Example:</strong> For summing claim payment amounts from a lookup child object, use DLRS in scheduled mode or Batch Apex for high-volume recalculation.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q23.</span>How do you ensure your custom architecture remains resilient and does not break during tri-annual Salesforce releases?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I avoid unsupported APIs, hardcoded DOM manipulation, and brittle customizations. I monitor release notes, test in preview sandboxes, run automated regression tests, validate critical updates, and keep custom code aligned with Salesforce-supported patterns.</p>
+        <p class="example"><strong>Example:</strong> Before a seasonal release, run Apex tests, LWC Jest tests, integration smoke tests, and key business flows in a preview sandbox.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q24.</span>How do you steer business stakeholders during requirements gathering to maximize the use of OOB functionality?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I translate requirements into business outcomes, demonstrate standard Salesforce options first, show cost and maintenance differences, and challenge requirements that are based on old UI habits rather than business value. I use prototypes to build confidence in OOB features.</p>
+        <p class="example"><strong>Example:</strong> If users ask for a custom approval screen, demonstrate standard Approval Process or Flow approval experience before proposing custom LWC.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q25.</span>What is the impact of deep, complex formula fields on report generation and list view rendering times?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> Formula fields are calculated at runtime. Deep cross-object formulas, nested IF statements, and formulas referencing other formulas can slow reports, list views, SOQL filters, and page rendering. For high-volume reporting, I consider denormalized stored fields updated by automation.</p>
+        <p class="example"><strong>Example:</strong> A report filtering on a complex formula that references five parent objects may perform worse than filtering on a stored indexed status field.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q26.</span>How do you strategically use Record Types and Page Layouts to scale processes without creating administrative clutter?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I use Record Types only when business processes, picklist values, or page behavior truly differ. I avoid creating record types for minor UI differences and use Dynamic Forms, component visibility, and permission sets where possible.</p>
+        <p class="example"><strong>Example:</strong> Commercial and Residential claims may justify separate record types if they have different stages and picklists; minor field visibility differences should use Dynamic Forms.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q27.</span>Explain the long-term scalability benefits of utilizing standard objects, such as Orders, Entitlements, and Cases, over building custom equivalents.</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> Standard objects provide built-in relationships, automation support, reporting, APIs, security behavior, product roadmap improvements, and compatibility with Salesforce features. Custom equivalents increase maintenance and may miss future OOB enhancements.</p>
+        <p class="example"><strong>Example:</strong> Use Case for service requests instead of a custom Ticket__c object when standard Case management, queues, assignment rules, and entitlement features meet requirements.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q28.</span>How do you architect a multi-currency and multi-language org using solely OOB features like Advanced Currency Management and Translation Workbench?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I enable multi-currency, configure corporate and active currencies, use Advanced Currency Management for dated exchange rates where needed, and use Translation Workbench for labels, picklists, custom fields, and validation messages. I include reporting and integration currency handling in the design.</p>
+        <p class="example"><strong>Example:</strong> For a global sales org, opportunities use local currency, corporate reporting converts amounts, and translated picklist values are shown to users based on language.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q29.</span>How do you culturally enforce the Configuration First, Code Second philosophy within a team of developers?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I enforce it through architecture review checklists, solution design templates, peer review questions, demos of OOB alternatives, and requiring justification for custom code. Developers must explain why Flow, Dynamic Forms, validation rules, or standard objects are insufficient before coding.</p>
+        <p class="example"><strong>Example:</strong> A pull request for a custom LWC page override should include a note explaining why Dynamic Forms or standard record pages could not satisfy the requirement.</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <div class="question"><span>Q30.</span>How do you systematically document your solution designs, ERDs, and sequence diagrams to ensure future scalability and developer onboarding?</div>
+      <div class="answer">
+        <p><strong>Answer:</strong> I document data models, object relationships, automation ownership, integration sequence diagrams, decision records, security design, governor-limit assumptions, deployment steps, rollback plans, and known constraints. Documentation is stored in a shared repository and updated as part of delivery.</p>
+        <p class="example"><strong>Example:</strong> For an integration design, include an ERD, request/response sequence diagram, retry strategy, error logging design, and API limit assumptions.</p>
+      </div>
+    </article>
+     <section id="topic7" class="section-title">
+        <h2>Topic 7: Lightning Flows &amp; Custom Development (Apex, VF, LWC)</h2>
+        <p><strong>Flow architecture, Invocable Apex, Trigger Framework, Queueable Apex, REST APIs, Visualforce security, Flow fault handling, Platform Events, and migration strategy</strong></p>
+      </section>
+      
+      <article class="qa-card">
+        <div class="question"><span>Q1.</span>How do you architect complex data bulkifications within a Record-Triggered Flow to avoid SOQL limits?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I design Record-Triggered Flows to work on collections and avoid per-record Get Records or DML. Before-save flows should be used for same-record field updates. For after-save flows, I collect IDs, query related records once, use collection assignments, and update records in bulk. If logic becomes complex or LDV-heavy, I move that part to bulkified Invocable Apex.</p>
+          <div class="example"><strong>Example:</strong> If 200 Claim__c records need related Claim_Line__c validation, collect all Claim IDs and query Claim_Line__c once using WHERE Claim__c IN :claimIds.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q2.</span>What are the hard UI and processing limitations of Screen Flows, and at what exact point do you switch to custom LWC?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Screen Flows are best for guided forms and simple branching, but they become limited for complex grids, advanced search, drag-and-drop, client-side calculations, rich validation, high-volume UI rendering, and reusable custom UX. I switch to LWC when the Flow screen becomes hard to maintain or cannot provide the required user experience cleanly.</p>
+          <div class="example"><strong>Example:</strong> A five-step claim wizard can be Screen Flow. An editable grid with hundreds of claim lines, filtering, inline calculations, and file preview should be custom LWC.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q3.</span>Walk me through the code syntax and configuration required to call an invocable Apex method directly from a Lightning Flow.</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Create a public/global Apex class with a static method annotated using @InvocableMethod. The method accepts a List of wrapper inputs and can return a List of wrapper outputs. Wrapper fields exposed to Flow use @InvocableVariable. In Flow Builder, add an Action element and select the Apex action.</p>
+          <div class="example"><strong>Example:</strong> @InvocableMethod(label=&#x27;Validate Claims&#x27;) public static List&lt;Response&gt; validateClaims(List&lt;Request&gt; requests) { /* bulk logic */ }</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q4.</span>From an order of execution and database save perspective, explain the difference between Before-Save (Fast Field Updates) and After-Save flows.</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Before-save flows run before the database save and are optimized for updating fields on the same triggering record without extra DML. After-save flows run after the record has been saved and has an Id, so they are used for related record updates, notifications, Apex calls, subflows, and platform events.</p>
+          <div class="example"><strong>Example:</strong> Set Claim Priority in before-save Flow. Create Claim Audit records in after-save Flow.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q5.</span>How do you properly wrap and embed a custom Lightning Web Component inside a Flow screen for advanced UI needs?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Expose the LWC with target lightning__FlowScreen in the .js-meta.xml file. Use @api properties for Flow input/output values. To pass values back to Flow, dispatch FlowAttributeChangeEvent. If the component controls navigation, use FlowNavigationNextEvent or FlowNavigationBackEvent.</p>
+          <div class="example"><strong>Example:</strong> A custom claim line selector LWC receives recordId from Flow and returns selectedLineIds back to Flow.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q6.</span>Explain the Trigger Handler framework pattern. How do you implement it to keep logic out of the trigger body?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> The trigger body should only route execution context to a handler class. The handler class separates before/after insert/update/delete methods and delegates business logic to service classes. This improves readability, testability, recursion control, and maintainability.</p>
+          <div class="example"><strong>Example:</strong> ClaimTrigger calls ClaimTriggerHandler.beforeUpdate(Trigger.new, Trigger.oldMap), and the handler calls ClaimService.validateClaims().</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q7.</span>How do you reliably manage recursive trigger executions using static variables and context control classes?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I use a dedicated static context class to track processed records or execution flags during a transaction. For bulk processing, Set&lt;Id&gt; is better than a single Boolean because it prevents skipping unrelated records in the same transaction.</p>
+          <div class="example"><strong>Example:</strong> TriggerExecutionControl.processedClaimIds prevents the same Claim__c from being processed multiple times in one transaction.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q8.</span>Compare the specific architectural use cases and limits of Queueable Apex versus Future methods.</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Future methods are simple async jobs with primitive parameters and limited chaining. Queueable Apex supports complex types, job IDs, chaining, better monitoring, and is preferred for modern async processing. Future is suitable for simple legacy fire-and-forget use cases.</p>
+          <div class="example"><strong>Example:</strong> Use Queueable Apex for document upload retry processing; use future only for a simple independent callout.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q9.</span>How do you build and expose a secure, custom REST API endpoint using Apex @RestResource?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Create a global class with @RestResource and methods like @HttpGet or @HttpPost. Secure it using OAuth/Connected App authentication, with sharing, CRUD/FLS checks, input validation, DTO wrappers, error handling, and no sensitive data exposure.</p>
+          <div class="example"><strong>Example:</strong> A POST /services/apexrest/claims/v1 endpoint accepts externalId and amount, validates input, creates Claim__c, and returns a structured response.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q10.</span>If you are forced to maintain Visualforce, what are the best practices for preventing Cross-Site Request Forgery (CSRF) and XSS on those pages?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Avoid state-changing GET requests, use apex:form and command buttons for changes, validate parameters, rely on Visualforce output encoding, avoid escape=&#x27;false&#x27; for user input, sanitize rich text, and never concatenate untrusted input into JavaScript or HTML.</p>
+          <div class="example"><strong>Example:</strong> Use apex:outputText for user comments and avoid rendering raw HTML from user input using escape=&#x27;false&#x27;.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q11.</span>How do you design robust fault paths and generic error-handling screens within complex Lightning Flows?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I add fault paths to all critical elements such as Get/Create/Update/Delete Records, Apex Actions, Subflows, and callouts. The fault path routes to a reusable error subflow or screen that logs Flow.FaultMessage, flow name, record Id, user Id, and transaction context. For Screen Flows, users see business-friendly guidance. For background flows, errors are logged and optionally notified to admins.</p>
+          <div class="example"><strong>Example:</strong> If Create Claim Payment fails, the fault path calls Log_Flow_Error and displays: &#x27;We could not submit the payment. Please contact support with Reference ID ERR-10293.&#x27;</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q12.</span>Explain the mechanics of passing variables from a Flow interview context dynamically into an embedded LWC.</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Flow passes values to LWC through public @api properties exposed in the component metadata under lightning__FlowScreen. In Flow Builder, those properties are mapped to Flow variables. To send data back, the LWC dispatches FlowAttributeChangeEvent for output properties.</p>
+          <div class="example"><strong>Example:</strong> Flow passes {!recordId} to recordId in LWC. The LWC returns selectedLineIds to Flow after the user selects claim lines.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q13.</span>How do you correctly implement @InvocableVariable and @InvocableMethod annotations, including handling bulkified lists?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Use @InvocableMethod on one static method that accepts List&lt;Request&gt; and optionally returns List&lt;Response&gt;. Use @InvocableVariable on wrapper fields. For bulkification, process the whole list: collect IDs, query once, use maps, perform DML once, and return one response per input where needed.</p>
+          <div class="example"><strong>Example:</strong> If Flow sends 200 Claim IDs, Apex queries all records once and returns 200 validation responses instead of querying inside a loop.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q14.</span>What are the architectural differences and distinct use cases between Autolaunched Flows and Subflows?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> An Autolaunched Flow runs without UI and can be invoked by other automation, Apex, schedules, REST, or another Flow. A Subflow is a reusable Flow called from a parent Flow. Architecturally, subflows should have clear inputs/outputs and reusable logic, while autolaunched flows may also operate as standalone background processes.</p>
+          <div class="example"><strong>Example:</strong> Calculate_Claim_Risk can be an autolaunched Flow reused as a subflow by claim creation, update, and reassessment flows.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q15.</span>How do you implement complex, cross-object validation logic using a combination of Record-Triggered Flows and Apex?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I keep simple validation in validation rules or before-save Flow. For cross-object validation involving multiple related objects, aggregates, or complex logic, the Flow calls bulkified Invocable Apex. Apex performs selective queries, validates all records in bulk, and returns structured results for Flow decisions or error handling.</p>
+          <div class="example"><strong>Example:</strong> Before approving a Claim__c, Apex checks claim lines, policy coverage, duplicate open claims, and account risk, then returns &#x27;Claim amount exceeds coverage.&#x27;</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q16.</span>How do you integrate Flow versions into your source-driven development and version control systems (Git)?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I retrieve Flow metadata into Salesforce DX format, commit flow-meta.xml files to Git, review changes through pull requests, validate deployments in CI/CD, and activate the intended version through controlled deployment steps. I avoid direct production edits and document active/inactive Flow versions.</p>
+          <div class="example"><strong>Example:</strong> A developer updates Claim_Submission.flow-meta.xml in a feature branch, validates in QA, deploys to UAT, then activates the approved version.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q17.</span>What are the specific transaction and element execution governor limits that apply strictly to Lightning Flows?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Flows share transaction limits such as SOQL, DML, CPU time, and heap. Flow-specific design concerns include executed elements, interviews, scheduled paths, paused interviews, and excessive loop operations. To stay scalable, I avoid database actions inside loops, reduce element count, use collection operations, and move complex logic to Apex when needed.</p>
+          <div class="example"><strong>Example:</strong> A Flow looping through 200 records and calling Update Records each time should be refactored to update one collection once.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q18.</span>Explain the architecture and implementation strategy for using a Platform Event-Triggered Flow.</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> A Platform Event-Triggered Flow subscribes to a platform event and runs asynchronously when the event is published. I use it for decoupled integrations, status updates, notifications, logging, and retry orchestration. The event payload should include identifiers and essential context, and the Flow should be idempotent where possible.</p>
+          <div class="example"><strong>Example:</strong> Document_Upload_Completed__e contains ClaimId__c and Status__c; the event-triggered Flow updates claim document status and notifies the owner.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q19.</span>How do you handle long-running, external API callouts originating from a Screen Flow without blocking the UI?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I avoid blocking the UI with long synchronous callouts. The Flow creates a request record or calls Apex to enqueue Queueable Apex. The async job performs the callout, updates status, logs errors, and optionally publishes a Platform Event. The Flow shows a confirmation or status screen to the user.</p>
+          <div class="example"><strong>Example:</strong> A Screen Flow submits a document upload request, Queueable Apex uploads to Azure Storage, and the request record changes from Pending to Completed or Failed.</div>
+        </div>
+      </article>
+      <article class="qa-card">
+        <div class="question"><span>Q20.</span>What is your step-by-step strategy for deprecating and migrating legacy Process Builders and Workflow Rules into Flow architectures?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I inventory all Workflow Rules and Process Builders, group them by object and business process, identify duplicate/conflicting logic, design replacement before-save and after-save Record-Triggered Flows, migrate one process at a time, test bulk and regression scenarios, deactivate legacy automation after signoff, and document the new automation architecture.</p>
+          <div class="example"><strong>Example:</strong> For Case, move field updates to before-save Flow and related task/email logic to after-save Flow, then deactivate old Workflow Rules and Process Builders after QA signoff.</div>
+        </div>
+      </article>
+    
+      <article class="qa-card">
+        <div class="question"><span>Q21.</span>How do you use Apex custom controllers and extensions to securely extend standard Visualforce functionality?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I use a standard controller extension when I want to preserve native Visualforce behavior such as record loading, standard save/delete behavior, view state handling, and platform security while adding custom logic. I use a custom controller when the page does not map cleanly to one standard object or requires a fully custom data model. For security, I use with sharing where appropriate, validate all URL parameters, enforce CRUD/FLS using Schema methods or Security.stripInaccessible, avoid exposing sensitive fields, and never trust client-side values. I also keep business logic in service classes so the controller remains thin and testable.</p>
+          <div class="example"><strong>Example:</strong> Example: For a Claim__c Visualforce detail page, use ApexPages.StandardController with a ClaimControllerExtension to add a custom &#x27;Submit for Review&#x27; action. The extension checks whether the current user has update access to Claim__c and field access to Status__c before changing the status.</div>
+        </div>
+      </article>
+
+      <article class="qa-card">
+        <div class="question"><span>Q22.</span>How do you build efficient server-side pagination in an LWC that fetches thousands of records via Apex?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I avoid loading thousands of records into the browser at once. The LWC sends page size, cursor/last record value, sort field, sort direction, and filters to Apex. Apex returns only the current page plus metadata such as hasNext or nextCursor. For better scalability, I prefer keyset pagination using an indexed field such as CreatedDate or Id instead of large OFFSET values. I also use selective WHERE clauses, limit fields returned, cache read-only data where appropriate, and debounce search input from the UI.</p>
+          <div class="example"><strong>Example:</strong> Example: An LWC claim list requests 50 records at a time. Apex queries Claim__c WHERE Status__c = :status AND CreatedDate &lt; :lastCreatedDate ORDER BY CreatedDate DESC LIMIT 51. The extra record tells the UI whether a next page exists.</div>
+        </div>
+      </article>
+
+      <article class="qa-card">
+        <div class="question"><span>Q23.</span>What are the specific security and performance benefits of utilizing standard list controllers in Visualforce?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Standard list controllers provide built-in pagination, record set handling, basic navigation methods, and platform-aware behavior without writing custom SOQL for common list use cases. From a security perspective, they work with Salesforce&#x27;s standard controller model and reduce the risk of insecure custom query construction. From a performance perspective, they reduce custom code, simplify pagination, and help avoid loading unnecessary large datasets into view state when implemented correctly.</p>
+          <div class="example"><strong>Example:</strong> Example: For a simple Account list Visualforce page, using standardController=&#x27;Account&#x27; recordSetVar=&#x27;accounts&#x27; gives built-in list pagination instead of writing a custom Apex controller that queries all Accounts at once.</div>
+        </div>
+      </article>
+
+      <article class="qa-card">
+        <div class="question"><span>Q24.</span>How do you write Apex test classes that specifically target and achieve code coverage for Record-Triggered Flows?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Record-Triggered Flows are covered when tests perform DML operations that meet the Flow entry criteria. I create test data that intentionally triggers each path: positive path, negative path, fault/exception scenario where possible, and bulk records. I use assertions against resulting field updates, related records, platform events, or logs. If the Flow calls Invocable Apex, I test both the Flow-triggering DML scenario and the Invocable Apex class directly for edge cases. I also use Test.startTest and Test.stopTest for asynchronous paths.</p>
+          <div class="example"><strong>Example:</strong> Example: To cover a Claim__c after-save Flow that creates Claim_Audit__c when Status__c becomes Approved, the Apex test inserts a Claim__c, updates Status__c to Approved, then asserts that one Claim_Audit__c record was created.</div>
+        </div>
+      </article>
+
+      <article class="qa-card">
+        <div class="question"><span>Q25.</span>Explain the concept of Flow Orchestration. What multi-user, multi-step scenarios dictate its use over standard Flows?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Flow Orchestration is used to coordinate complex business processes across multiple users, steps, approvals, and work items. Standard Flows are good for a single automation or guided interaction, but orchestration is better when work must move between different roles, wait for human actions, branch across stages, and track overall process progress. I use it when the process needs visibility, ownership, handoffs, and long-running state management across multiple participants.</p>
+          <div class="example"><strong>Example:</strong> Example: A claim settlement process may require an intake user to submit details, an adjuster to validate documents, a manager to approve payout, finance to confirm payment, and customer service to notify the customer. Flow Orchestration can coordinate these steps and assignments.</div>
+        </div>
+      </article>
+
+      <article class="qa-card">
+        <div class="question"><span>Q26.</span>How do you use standard Flow reactivity to conditionally display fields in a Screen Flow based on real-time user input?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I use component visibility rules and reactive screen components so that values entered on the same screen can immediately control what other fields or sections are displayed. The Flow screen stores user input in variables or record variables, and visibility conditions reference those values. This avoids unnecessary custom LWC development for simple dynamic UI behavior.</p>
+          <div class="example"><strong>Example:</strong> Example: In a claim intake Screen Flow, when the user selects Claim Type = &#x27;Residential&#x27;, the screen immediately displays Roof Type and Installation Date fields. When Claim Type = &#x27;Commercial&#x27;, it displays Contractor Account and Project Size fields.</div>
+        </div>
+      </article>
+
+      <article class="qa-card">
+        <div class="question"><span>Q27.</span>Detail the security contexts (System mode vs. User mode) available in Flows and when to explicitly enforce user context.</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> Flows can run with different security behavior depending on type and configuration. System context can allow automation to access records and fields beyond the running user&#x27;s normal access, while user context respects the user&#x27;s permissions more closely. I explicitly enforce user context when the automation is directly tied to user-entered data, when the UI should not expose restricted fields, or when compliance requires record and field-level access to be honored. For backend administrative automation, system context may be appropriate, but it must be carefully documented.</p>
+          <div class="example"><strong>Example:</strong> Example: A Screen Flow used by service agents to update customer data should respect user permissions. A scheduled admin maintenance Flow that recalculates internal summary fields may run in system context if it does not expose restricted data to users.</div>
+        </div>
+      </article>
+
+      <article class="qa-card">
+        <div class="question"><span>Q28.</span>How do you query standard and custom metadata dynamically in Apex to build flexible, configuration-driven LWC components?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I store UI behavior, field mappings, filter definitions, feature toggles, and integration settings in Custom Metadata Types or standard metadata where appropriate. Apex queries the metadata, converts it into lightweight DTOs, and returns it to LWC using cacheable Apex if the data is read-only. I validate metadata values before using them in dynamic SOQL and restrict allowed object/field names to prevent unsafe dynamic behavior.</p>
+          <div class="example"><strong>Example:</strong> Example: A generic claim related-list LWC reads Claim_Table_Config__mdt to determine object API name, displayed fields, default filters, and row actions. Apex validates those fields against Schema describe results and returns the configuration to the LWC.</div>
+        </div>
+      </article>
+
+      <article class="qa-card">
+        <div class="question"><span>Q29.</span>How do you manage the XML deployment nuances of active versus inactive Flows between environments?</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> I treat Flow deployment as both metadata movement and activation control. Flow XML contains versioned definitions, and deployment behavior can be sensitive when active versions differ across environments. I retrieve and commit Flow metadata in source control, validate dependencies such as subflows, Apex actions, objects, fields, and permissions, and document which Flow version should be activated after deployment. In controlled releases, I deploy the new Flow version inactive when appropriate, run validation/UAT, then activate the intended version as a release step. I also deactivate or archive obsolete versions to avoid admin confusion.</p>
+          <div class="example"><strong>Example:</strong> Example: Deploy Claim_Submission Flow v8 to UAT, keep v7 active during validation, run testing, then activate v8 after signoff. The deployment checklist clearly states the target active version and rollback version.</div>
+        </div>
+      </article>
+
+      <article class="qa-card">
+        <div class="question"><span>Q30.</span>Describe a highly complex business requirement where you had to seamlessly combine Apex backend logic, a Flow orchestration layer, and an LWC frontend to deliver the solution.</div>
+        <div class="answer">
+          <p><strong>Answer:</strong> A strong architecture is to use LWC for rich user experience, Flow or Flow Orchestration for process coordination, and Apex for complex backend logic. The LWC handles dynamic UI, validations, file selection, and user-friendly interactions. Flow coordinates business stages, assignments, approvals, and notifications. Apex handles bulk processing, integrations, complex calculations, security checks, and transaction-safe data operations. This separation keeps each layer focused and scalable.</p>
+          <div class="example"><strong>Example:</strong> Example: For an enterprise claim settlement process, an LWC provides an editable claim line grid and document upload UI. Flow Orchestration routes the claim through adjuster review, manager approval, and finance payout. Apex validates coverage, calculates settlement amount, uploads documents to external storage, logs integration errors, and publishes Platform Events for downstream systems.</div>
+        </div>
+      </article>
+      <div class="footer-note">Prepared as a section-wise HTML interview guide. Add future topics as new sidebar sections.</div>
+    </main>
+  </div>
+</body>
+</html>
